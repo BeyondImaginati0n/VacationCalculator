@@ -1,0 +1,51 @@
+<div class="container" [formGroup]="reactiveForm">
+    <div class="modal-header">
+      {{modalHeaderContent}}
+    </div>
+    <div class="inputs" >
+      <div class="input_container">
+        <label for="" class="input-label">Name</label>
+        <input   type="text" class="form-control inputfield"  formControlName="name" >
+      </div>
+      <div class="input_container">
+        <label for="" class="input-label">familyName</label>
+        <input    type="text" class="form-control inputfield" formControlName="familyName">
+      </div>
+    </div>
+    <div class="buttons_container">
+      <button class="btn close-button" mat-dialog-close>close</button>
+      <button class="btn save-button" (click)="save()">save</button>
+    </div>
+    <div class="monthshours_container" >
+      <input *ngIf="selectedMonth=='December'" formControlName="december"  placeholder="Hours per December :" type="text"  class="form-control inputfield monthsHours"  value="">
+      <input *ngIf="selectedMonth=='January'" formControlName="january"   placeholder="Hours per January :" type="text"  class="form-control inputfield monthsHours"  value="">
+      <input *ngIf="selectedMonth=='February'" formControlName="february"   placeholder="Hours per February :" type="text"  class="form-control inputfield monthsHours"  value="">
+      <input *ngIf="selectedMonth=='March'"  formControlName="march"  placeholder="Hours per March :" type="text"  class="form-control inputfield monthsHours"  value="">
+      <input *ngIf="selectedMonth=='April'"  formControlName="april"  placeholder="Hours per April :" type="text"  class="form-control inputfield monthsHours"  value="">
+      <input *ngIf="selectedMonth=='May'"  formControlName="may"  placeholder="Hours per May :" type="text"  class="form-control inputfield monthsHours"  value="">
+      <input *ngIf="selectedMonth=='June'"  formControlName="june"  placeholder="Hours per June:" type="text"  class="form-control inputfield monthsHours"  value="">
+      <input *ngIf="selectedMonth=='July'" formControlName="july"   placeholder="Hours per July :" type="text"  class="form-control inputfield monthsHours"  value="">
+      <input *ngIf="selectedMonth=='August'"  formControlName="august"  placeholder="Hours per August :" type="text"  class="form-control inputfield monthsHours"  value="">
+      <input *ngIf="selectedMonth=='September'"  formControlName="september"  placeholder="Hours per September :" type="text"  class="form-control inputfield monthsHours"  value="">
+      <input *ngIf="selectedMonth=='October'"  formControlName="october"  placeholder="Hours per October :" type="text"  class="form-control inputfield monthsHours"  value="">
+      <input *ngIf="selectedMonth=='November'"  formControlName="november"  placeholder="Hours per November :" type="text"  class="form-control inputfield monthsHours"  value="">
+
+      <select  class="months_select"  #select>
+        <option>December</option>
+        <option>January</option>
+        <option>February</option>
+        <option>March</option>
+        <option>April</option>
+        <option>May</option>
+        <option>June</option>
+        <option>July</option>
+        <option>August</option>
+        <option>September</option>
+        <option>October</option>
+        <option>November</option>
+      </select>
+    </div>
+    <div class="hours_vacation_container">
+      <p class="totalHours">Total working hours : {{totalHours}} </p>
+    <p class="vacationDays">Vacation days : </p>
+    </div>
